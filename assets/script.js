@@ -1,6 +1,6 @@
 // JavaScript file for work-day-scheduler
 
-var currentHour = moment().hour(); //reused in timer + updateCalendar function
+var currentHour; //reused in timer + updateCalendar function
 
 // Function to update the work-day calendar:
 // * Colour code each row based on whether past, present or future.
@@ -35,15 +35,18 @@ function updateCalendar(pageLoad) {
     });
 }
 
+
 // 1 minute timer to check the current hour. If hour has changed since previous updateCalendar function call, run it again to apply colour coding
-// Does not trigger load from localstorage. 
+// Does not trigger load from localstorage.
 // NOTE: There is a delay (2-3 mins) if time is adjusted via system settings
+function HourCheck(){
 setInterval(() => {
     var tempHour = moment().hour();
     if (currentHour != tempHour) {
         updateCalendar(0);
     }
 }, 60000);
+};
 
 // Save to local storage when 'Save' button is clicked for the item. 
 $(".saveBtn").click(function (event) {
@@ -59,5 +62,6 @@ $(".saveBtn").click(function (event) {
     }, 3000);
 });
 
-// Run updateCalendar function on page load. 
+//Start Functions on load
 updateCalendar(1);
+HourCheck();
