@@ -27,7 +27,7 @@ function updateCalendar(pageLoad) {
 
         // Update events from local storage when function is called with pageLoad flagged as true only.
         if (pageLoad) {
-            var storageItem = localStorage.getItem($(this).attr("id"));
+            var storageItem = localStorage.getItem($(this).attr("data-hour"));
             if (storageItem !== null) { // only update the field if there is an entry in the local storage. 
                 $(this).children(".description").val(storageItem);
             }
@@ -48,7 +48,7 @@ setInterval(() => {
 // Save to local storage when 'Save' button is clicked for the item. 
 $(".saveBtn").click(function (event) {
     event.stopPropagation();
-    var elementID = $(this).parent().attr("id"); //get the ID of the row clicked. 
+    var elementID = $(this).parent().attr("data-hour"); //get the data-hour of the row clicked. 
     var elementText = $(this).siblings("textarea").val(); // get the text in the textarea
     localStorage.setItem(elementID, elementText);
 
