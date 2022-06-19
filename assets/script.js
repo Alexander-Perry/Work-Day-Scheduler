@@ -41,7 +41,6 @@ function updateCalendar(pageLoad) {
 setInterval(() => {
     var tempHour = moment().hour();
     if (currentHour != tempHour) {
-        console.log("Hour Changed");
         updateCalendar(0);
     }
 }, 60000);
