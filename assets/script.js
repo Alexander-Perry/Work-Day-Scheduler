@@ -39,7 +39,7 @@ function updateCalendar(pageLoad) {
 // 1 minute timer to check the current hour. If hour has changed since previous updateCalendar function call, run it again to apply colour coding
 // Does not trigger load from localstorage.
 // NOTE: There is a delay (2-3 mins) if time is adjusted via system settings
-function HourCheck() {
+function hourCheck() {
     setInterval(() => {
         var tempHour = moment().hour();
         if (currentHour != tempHour) {
@@ -64,4 +64,4 @@ $(".saveBtn").click(function (event) {
 
 //Start Functions on load
 updateCalendar(1);
-HourCheck();
+hourCheck();
