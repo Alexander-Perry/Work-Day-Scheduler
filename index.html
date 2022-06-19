@@ -21,44 +21,118 @@
   </header>
   <div class="container">
     <!-- Timeblocks go here -->
-    <!--  Save button icon - https://fontawesome.com/v5/icons/save?s=solid  -->
+    <!--  Save button icon - https://fontawesome.com/v5/icons/save?s=solid - '<i class=fas fa-save"></i>'' -- needs to be inline with 'button' otherwise it messes layout -->
+    <!-- Warning: Bootstrap .btn messes up layout -->
     <!-- css classes, 'hour', 'description', 'saveBtn' -->
     <!-- 8am -->
-    <div class="row time-block">
+    <div class="row time-block" id="8" data-hour="8">
       <div class="col-md-2 hour">
-        8 AM <!--doesn't align well?-->
+        8 AM
       </div>
       <textarea class="col-md-8 description"></textarea>
-      <button class="btn col-md-2 saveBtn"> <!--.btn class from bootstrap, saveBtn from CSS-->
-        <i class="fas fa-save"></i> <!-- '<i class=fas fa-save">'' from font-awesome -->
-      </button>
+      <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
     </div>
     <!-- 9am -->
-    <div class="row time-block">
+    <div class="row time-block" id="9" data-hour="9">
       <div class="col-md-2 hour">
         9 AM
       </div>
       <textarea class="col-md-8 description"></textarea>
-      <button class="btn col-md-2 saveBtn"> <!--.btn class from bootstrap, saveBtn from CSS-->
-        <i class="fas fa-save"></i> <!-- '<i class=fas fa-save">'' from font-awesome -->
-      </button>
+      <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
     </div>
     <!-- 10 -->
-
+    <div class="row time-block" id="10" data-hour="10">
+      <div class="col-md-2 hour">
+        10 AM
+      </div>
+      <textarea class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
+    </div>
     <!-- 11 -->
+    <div class="row time-block" id="11" data-hour="11">
+      <div class="col-md-2 hour">
+        11 AM
+      </div>
+      <textarea class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
+    </div>
 
     <!-- 12 -->
+    <div class="row time-block" id="12" data-hour="12">
+      <div class="col-md-2 hour">
+        12 PM
+      </div>
+      <textarea class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
+    </div>
 
     <!-- 13 -->
+    <div class="row time-block" id="13" data-hour="13">
+      <div class="col-md-2 hour">
+        1 PM
+      </div>
+      <textarea class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
+    </div>
 
     <!-- 14 -->
+    <div class="row time-block" id="14" data-hour="14">
+      <div class="col-md-2 hour">
+        2 PM
+      </div>
+      <textarea class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
+    </div>
 
     <!-- 15 -->
-
+    <div class="row time-block" id="15" data-hour="15">
+      <div class="col-md-2 hour">
+        3 PM
+      </div>
+      <textarea class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
+    </div>
     <!-- 16 -->
-
+    <div class="row time-block" id="16" data-hour="16">
+      <div class="col-md-2 hour">
+        4 PM
+      </div>
+      <textarea class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
+    </div>
     <!-- 17 / 5pm -->
+    <div class="row time-block" id="17" data-hour="17">
+      <div class="col-md-2 hour">
+        5 PM
+      </div>
+      <textarea class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
+    </div>
 
+    <!-- 10 11pm and 12am for testing  It Works -->
+    <!-- <div class="row time-block" id="22" data-hour="22" >
+    <div class="col-md-2 hour">
+      10 PM
+    </div>
+    <textarea class="col-md-8 description"></textarea>
+    <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
+  </div>
+
+  <div class="row time-block" id="23" data-hour="23" >
+    <div class="col-md-2 hour">
+      11 PM
+    </div>
+    <textarea class="col-md-8 description"></textarea>
+    <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
+  </div>
+
+  <div class="row time-block" id="24" data-hour="24" >
+    <div class="col-md-2 hour">
+      12 AM
+    </div>
+    <textarea class="col-md-8 description"></textarea>
+    <button class="btn saveBtn col-md-2"><i class="fas fa-save"></i></button>
+  </div> -->
 
 
 

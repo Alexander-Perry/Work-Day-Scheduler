@@ -23,26 +23,68 @@
 // * jquery
 // * fontawesome - the icons
 // * moment
-var currentDay, currentHour;
+var currentDay = moment().format("dddd, MMMM Do");
+var currentHour = moment().hour();
+$("#currentDay").text(currentDay);
 
-//TODO: 
+
+//TODO:
 // 3 columns, timeslot, the event, save button
-// event is text entry that can be modded, save button saves to local storage. 
-// colour code the events based on time. 
+// event is text entry that can be modded, save button saves to local storage.
+// colour code the events based on time.
+
+
+// 1 minute timer to refresh current day/hour and change the classes based on past/present/future. -- No need to run the check any more frequent than this.
+
+//Move below into a function... 
 
 setInterval(() => {
-    currentDay = moment().format("dddd, MMMM Do")
-    currentHour = moment().format("hh")
-    $("#currentDay").text(currentDay);
+    currentDay = moment().format("dddd, MMMM Do");
+    currentHour = moment().hour();
+    if($("#currentDay").text() != currentDay){
+        $("#currentDay").text(currentDay);
+    };
+    console.log($("#currentDay").text());
 
-    /// classes = past, .present .future already exist. 
-    // If query for currenthour and the timeblocks
+    $(".row").each(function (index) {
+        //Check for Past
+        if (parseInt($(this).attr("data-hour")) < currentHour && !$(this).hasClass("past")) {               
+            $(this).removeClass("present future").addClass("past");
+            console.log("past added");
+        };
+        //Check for Present
+        if (parseInt($(this).attr("data-hour")) == currentHour && !$(this).hasClass("present")) {               
+            $(this).removeClass("past future").addClass("present");
+            console.log("present added");
+        };
+        //Check for Future
+        if (parseInt($(this).attr("data-hour")) > currentHour && !$(this).hasClass("future")) {               
+            $(this).removeClass("past present").addClass("future");
+            console.log("future added");
+        };
+        // if localStorage.getItem($(this).attr("id")    )
+        console.log($(this).attr("id"));
+        var currentID = $(this).attr("id");  
 
+        if (localStorage.getItem(currentID) !== null) {
+            console.log(localStorage.getItem(currentID));
+            
+            // $(this).children(".description").val()
+        }
 
-    // standard Timer to get current date/time and update the id "currentDay" - update every second
-    // Check current time vs the 'timeblocks' and colour based on past (grey),present (red),future (green). 
+    });
     
-}, 1000);
+}, 10000);
+
+$(".saveBtn").click(function(event){
+    event.stopPropagation();
+    //save to local storage
+    var elementID = $(this).parent().attr("id"); //get the ID of the row
+    var elementText = $(this).siblings("textarea").val(); // get the text in the textarea
+
+    localStorage.setItem(elementID, elementText);
+
+});
 
 // click event for save button. That's really it... trigger event off 'this' row. 
-
+// this.siblings(textarea)
